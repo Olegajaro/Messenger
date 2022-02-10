@@ -34,6 +34,8 @@ class LoginViewController: UIViewController {
     // MARK: - View Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        setupTextFieldDelegates()
     }
     
     // MARK: - IBActions
@@ -47,6 +49,41 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func signUpButtonPressed(_ sender: Any) {
+    }
+    
+    // MARK: - Setup
+    private func setupTextFieldDelegates() {
+        emailTextField.addTarget(
+            self,
+            action: #selector(textFieldDidChange(_:)),
+            for: .editingChanged
+        )
+        passwordTextField.addTarget(
+            self,
+            action: #selector(textFieldDidChange(_:)),
+            for: .editingChanged
+        )
+        repeatPasswordTextField.addTarget(
+            self,
+            action: #selector(textFieldDidChange(_:)),
+            for: .editingChanged
+        )
+    }
+    
+    @objc private func textFieldDidChange(_ textField: UITextField) {
+        updatePlaceholderLabels(textField: textField)
+    }
+    
+    // MARK: - Animations
+    private func updatePlaceholderLabels(textField: UITextField) {
+        switch textField {
+        case emailTextField:
+            emailLabel.text = textField.hasText ? "Email" : ""
+        case passwordTextField:
+            passwordLabel.text = textField.hasText ? "Password" : ""
+        default:
+            repeatPasswordLabel.text = textField.hasText ? "Repeat password" : ""
+        }
     }
 }
 
