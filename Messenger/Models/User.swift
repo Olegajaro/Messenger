@@ -8,12 +8,11 @@
 import Foundation
 import Firebase
 import FirebaseFirestoreSwift
-import RealmSwift
 
 struct User: Codable, Equatable {
     var id = ""
     var userName: String
-    var emai: String
+    var email: String
     var pushId = ""
     var avatarLink = ""
     var status: String
@@ -45,3 +44,15 @@ struct User: Codable, Equatable {
     }
 }
 
+func saveUserLocally(_ user: User) {
+    
+    let encoder = JSONEncoder()
+    
+    do {
+        let data = try encoder.encode(user)
+        UserDefaults.standard.set(data, forKey: KEY_CURRENT_USER)
+    } catch {
+        print("Error saving user locally ", error.localizedDescription)
+    }
+    
+}
