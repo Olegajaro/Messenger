@@ -249,7 +249,7 @@
         <!--Settings-->
         <scene sceneID="NT8-6g-TV2">
             <objects>
-                <tableViewController id="7Lm-lT-iTv" sceneMemberID="viewController">
+                <tableViewController id="7Lm-lT-iTv" customClass="SettingsTableViewController" customModule="Messenger" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="FE0-On-tmR">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -309,14 +309,17 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GQ1-co-EG5">
-                                                    <rect key="frame" x="16" y="6.5" width="361.5" height="31"/>
+                                                    <rect key="frame" x="8" y="6.5" width="369.5" height="31"/>
                                                     <state key="normal" title="Button"/>
                                                     <buttonConfiguration key="configuration" style="plain" title="Tell a Friend"/>
+                                                    <connections>
+                                                        <action selector="tellAFriendButtonPressed:" destination="7Lm-lT-iTv" eventType="touchUpInside" id="yEa-2X-ejS"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="GQ1-co-EG5" firstAttribute="centerY" secondItem="62a-9Y-afx" secondAttribute="centerY" id="FBq-LH-eAh"/>
-                                                <constraint firstItem="GQ1-co-EG5" firstAttribute="leading" secondItem="62a-9Y-afx" secondAttribute="leading" constant="16" id="hG6-Ug-6CC"/>
+                                                <constraint firstItem="GQ1-co-EG5" firstAttribute="leading" secondItem="62a-9Y-afx" secondAttribute="leading" constant="8" id="hG6-Ug-6CC"/>
                                                 <constraint firstAttribute="trailing" secondItem="GQ1-co-EG5" secondAttribute="trailing" constant="8" id="xT3-qO-Tc9"/>
                                             </constraints>
                                         </tableViewCellContentView>
@@ -330,15 +333,18 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3V2-bf-WMl">
-                                                    <rect key="frame" x="16" y="6.5" width="361.5" height="31"/>
+                                                    <rect key="frame" x="8" y="6.5" width="369.5" height="31"/>
                                                     <state key="normal" title="Button"/>
                                                     <buttonConfiguration key="configuration" style="plain" title="Terms and Conditions"/>
+                                                    <connections>
+                                                        <action selector="termsAndConditionsButtonPressed:" destination="7Lm-lT-iTv" eventType="touchUpInside" id="015-wy-UUL"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstAttribute="trailing" secondItem="3V2-bf-WMl" secondAttribute="trailing" constant="8" id="epw-de-8oR"/>
                                                 <constraint firstItem="3V2-bf-WMl" firstAttribute="centerY" secondItem="PdC-db-NUR" secondAttribute="centerY" id="i3V-9K-XqC"/>
-                                                <constraint firstItem="3V2-bf-WMl" firstAttribute="leading" secondItem="PdC-db-NUR" secondAttribute="leading" constant="16" id="xt0-xK-CjE"/>
+                                                <constraint firstItem="3V2-bf-WMl" firstAttribute="leading" secondItem="PdC-db-NUR" secondAttribute="leading" constant="8" id="xt0-xK-CjE"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" name="CellColor"/>
@@ -354,15 +360,15 @@
                                             <rect key="frame" x="0.0" y="0.0" width="385.5" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c6Q-P9-dYD">
-                                                    <rect key="frame" x="16" y="11.5" width="353.5" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="App version" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c6Q-P9-dYD">
+                                                    <rect key="frame" x="20" y="10" width="349.5" height="23.5"/>
+                                                    <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="c6Q-P9-dYD" firstAttribute="leading" secondItem="yeu-kQ-xQ8" secondAttribute="leading" constant="16" id="Kc9-qq-r6o"/>
+                                                <constraint firstItem="c6Q-P9-dYD" firstAttribute="leading" secondItem="yeu-kQ-xQ8" secondAttribute="leading" constant="20" id="Kc9-qq-r6o"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="c6Q-P9-dYD" secondAttribute="trailing" constant="8" id="UzQ-td-1ne"/>
                                                 <constraint firstItem="c6Q-P9-dYD" firstAttribute="centerY" secondItem="yeu-kQ-xQ8" secondAttribute="centerY" id="WoX-dt-Prk"/>
                                             </constraints>
@@ -377,9 +383,14 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c8i-xI-YbW">
-                                                    <rect key="frame" x="16" y="6.5" width="390" height="31"/>
+                                                    <rect key="frame" x="16" y="4" width="390" height="35.5"/>
                                                     <state key="normal" title="Button"/>
-                                                    <buttonConfiguration key="configuration" style="plain" title="Logout"/>
+                                                    <buttonConfiguration key="configuration" style="plain" title="Log Out">
+                                                        <fontDescription key="titleFontDescription" type="boldSystem" pointSize="18"/>
+                                                    </buttonConfiguration>
+                                                    <connections>
+                                                        <action selector="logOutButtonPressed:" destination="7Lm-lT-iTv" eventType="touchUpInside" id="WSs-bw-FIo"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <constraints>
@@ -399,6 +410,12 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Settings" id="pXV-Ri-6cU"/>
+                    <connections>
+                        <outlet property="appVersionLabel" destination="c6Q-P9-dYD" id="UKg-J3-bXX"/>
+                        <outlet property="avatarImageView" destination="XkR-e7-Mf0" id="T9V-ip-pIr"/>
+                        <outlet property="statusLabel" destination="bRi-ds-sev" id="0Up-Hj-ATC"/>
+                        <outlet property="userNameLabel" destination="95v-cM-Kdq" id="RBT-0F-PVa"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Mww-BF-tVL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
