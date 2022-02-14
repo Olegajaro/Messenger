@@ -7,4 +7,5 @@
 
 import Foundation
 
+let userDefaults = UserDefaults.standard
 let KEY_CURRENT_USER = "currentUser"
