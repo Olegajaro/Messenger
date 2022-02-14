@@ -155,7 +155,23 @@ class LoginViewController: UIViewController {
     
     private func loginUser() {
         
-
+        FirebaseUserListener.shared.loginUserWithEmail(
+            email: emailTextField.text ?? "",
+            password: passwordTextField.text ?? ""
+        ) { error, isEmailVerified in
+            
+            if error == nil {
+                if isEmailVerified {
+                    self.goToApp()
+                    print("user has logged in with email ", User.currentUser?.email ?? "")
+                } else {
+                    ProgressHUD.showFailed("Please verify email")
+                    self.resendEmailButton.isHidden = false
+                }
+            } else {
+                ProgressHUD.showFailed(error?.localizedDescription)
+            }
+        }
     }
     
     private func registerUser() {
@@ -177,6 +193,11 @@ class LoginViewController: UIViewController {
         } else {
             ProgressHUD.showFailed("The passwords don't match")
         }
+    }
+    
+    // MARK: - Navigation
+    private func goToApp() {
+        print("go to app")
     }
 }
 
