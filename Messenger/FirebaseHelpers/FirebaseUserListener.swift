@@ -67,8 +67,28 @@ class FirebaseUserListener {
         }
     }
     
+    // MARK: - Resend link methods
+    func resendVerificationEmail(
+        email: String, completion: @escaping CompletionTypeRegister
+    ) {
+        Auth.auth().currentUser?.reload { error in
+            
+            Auth.auth().currentUser?.sendEmailVerification { error in
+                completion(error)
+            }
+        }
+    }
+    
+    func resetPasswordFor(
+        email: String, completion: @escaping CompletionTypeRegister
+    ) {
+        Auth.auth().sendPasswordReset(withEmail: email) { error in
+            completion(error)
+        }
+    }
+    
     // MARK: - Save users
-    func saveUserToFirestore(_ user: User) {
+    private func saveUserToFirestore(_ user: User) {
         do {
             try firebaseReference(.user).document(user.id).setData(from: user)
         } catch {
@@ -77,7 +97,7 @@ class FirebaseUserListener {
     }
     
     // MARK: - Download user
-    func downloadUserFromFirebase(userId: String, email: String? = nil) {
+    private func downloadUserFromFirebase(userId: String, email: String? = nil) {
         
         firebaseReference(.user).document(userId).getDocument { snapshot, error in
             guard let document = snapshot else {
