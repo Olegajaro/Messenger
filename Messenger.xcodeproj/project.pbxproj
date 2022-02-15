@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		1042B65427BBCFEE00D99213 /* EditProfileTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1042B65327BBCFEE00D99213 /* EditProfileTableViewController.swift */; };
 		1042B65627BBFEAA00D99213 /* FileStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1042B65527BBFEAA00D99213 /* FileStorage.swift */; };
+		1042B65927BC0EC300D99213 /* GlobalFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1042B65827BC0EC300D99213 /* GlobalFunctions.swift */; };
 		1058C92D27B563DF00A25995 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1058C92C27B563DF00A25995 /* AppDelegate.swift */; };
 		1058C92F27B563DF00A25995 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1058C92E27B563DF00A25995 /* SceneDelegate.swift */; };
 		1058C93127B563DF00A25995 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1058C93027B563DF00A25995 /* LoginViewController.swift */; };
@@ -29,6 +30,7 @@
 /* Begin PBXFileReference section */
 		1042B65327BBCFEE00D99213 /* EditProfileTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileTableViewController.swift; sourceTree = "<group>"; };
 		1042B65527BBFEAA00D99213 /* FileStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileStorage.swift; sourceTree = "<group>"; };
+		1042B65827BC0EC300D99213 /* GlobalFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalFunctions.swift; sourceTree = "<group>"; };
 		1058C92927B563DF00A25995 /* Messenger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Messenger.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1058C92C27B563DF00A25995 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1058C92E27B563DF00A25995 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -62,6 +64,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1042B65727BC0EB200D99213 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				10E6348927B8F4D700A3370A /* Constants.swift */,
+				1042B65827BC0EC300D99213 /* GlobalFunctions.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 		1058C92027B563DF00A25995 = {
 			isa = PBXGroup;
 			children = (
@@ -89,7 +100,7 @@
 				1058C93027B563DF00A25995 /* LoginViewController.swift */,
 				109F1FD227BAADC4002723BF /* SettingsTableViewController.swift */,
 				1042B65327BBCFEE00D99213 /* EditProfileTableViewController.swift */,
-				10E6348927B8F4D700A3370A /* Constants.swift */,
+				1042B65727BC0EB200D99213 /* Helpers */,
 				10E6348827B8F2BB00A3370A /* Models */,
 				10E6348D27B8F90B00A3370A /* FirebaseHelpers */,
 				1058C93227B563DF00A25995 /* Main.storyboard */,
@@ -272,6 +283,7 @@
 			files = (
 				1058C93127B563DF00A25995 /* LoginViewController.swift in Sources */,
 				1042B65627BBFEAA00D99213 /* FileStorage.swift in Sources */,
+				1042B65927BC0EC300D99213 /* GlobalFunctions.swift in Sources */,
 				1058C92D27B563DF00A25995 /* AppDelegate.swift in Sources */,
 				1058C94127B5677D00A25995 /* ProgressHUD.swift in Sources */,
 				1042B65427BBCFEE00D99213 /* EditProfileTableViewController.swift in Sources */,

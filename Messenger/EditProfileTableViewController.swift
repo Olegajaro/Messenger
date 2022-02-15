@@ -68,11 +68,16 @@ class EditProfileTableViewController: UITableViewController {
             
             if user.avatarLink != "" {
                 // set avatar
+                FileStorage.downloadImage(
+                    imageUrl: user.avatarLink
+                ) { [weak self] image in
+                    self?.avatarImageView.image = image
+                }
             }
         }
     }
     
-    // MARK: - Configure
+    // MARK: - Configure Text Field
     private func configureTextField() {
         userNameTextField.delegate = self
         userNameTextField.clearButtonMode = .whileEditing
@@ -102,6 +107,7 @@ class EditProfileTableViewController: UITableViewController {
                 saveUserLocally(user)
                 FirebaseUserListener.shared.saveUserToFirestore(user)
             }
+            
             if let imageData = image.jpegData(compressionQuality: 1.0) {
                 FileStorage.saveFileLocally(
                     fileData: imageData as NSData,

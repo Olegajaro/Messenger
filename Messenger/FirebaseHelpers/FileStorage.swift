@@ -12,7 +12,7 @@ let storage = Storage.storage()
 
 class FileStorage {
     
-    // MARK: - Images
+    // MARK: - Upload Image
     class func uploadImage(
         _ image: UIImage, directory: String,
         completion: @escaping (_ documentLink: String?) -> Void
@@ -58,6 +58,52 @@ class FileStorage {
         }
     }
     
+    // MARK: - Download Image
+    class func downloadImage(
+        imageUrl: String, completion: @escaping (_ image: UIImage?) -> Void
+    ) {
+        let imageFileName = fileNameFrom(fileUrl: imageUrl)
+        
+        if fileExistsAtPath(path: imageFileName) {
+            // get it locally
+            print("DEBUG: we have local image")
+            let fileInDocDirect = fileInDocumentsDirectory(imageFileName)
+            if let contentsOfFile = UIImage(contentsOfFile: fileInDocDirect) {
+                completion(contentsOfFile)
+            } else {
+                print("couldn't convert local image")
+                completion(UIImage(named: "avatar"))
+            }
+        } else {
+            // download from Firebase
+            print("DEBUG: lets get from Firebase")
+            if imageUrl != "" {
+                guard let documentUrl = URL(string: imageUrl) else { return }
+                
+                let downloadQueue = DispatchQueue(label: "imageDownloadQueue")
+                
+                downloadQueue.async {
+                    let data = NSData(contentsOf: documentUrl)
+                    
+                    if data != nil {
+                        // Save locally
+                        FileStorage.saveFileLocally(
+                            fileData: data!,
+                            fileName: imageFileName
+                        )
+                        
+                        DispatchQueue.main.async {
+                            completion(UIImage(data: data! as Data))
+                        }
+                    } else {
+                        print("no document in database")
+                        completion(nil)
+                    }
+                }
+            }
+        }
+    }
+    
     // MARK: - Save Locally
     class func saveFileLocally(fileData: NSData, fileName: String) {
         
@@ -70,7 +116,7 @@ class FileStorage {
 }
 
 // MARK: - Helpers
-func fileInDocumentsDirectory(fileName: String) -> String {
+func fileInDocumentsDirectory(_ fileName: String) -> String {
     return getDocumentsURL().appendingPathComponent(fileName).path
 }
 
@@ -81,6 +127,6 @@ func getDocumentsURL() -> URL {
 }
 
 func fileExistsAtPath(path: String) -> Bool {
-    let filepath = fileInDocumentsDirectory(fileName: path)
+    let filepath = fileInDocumentsDirectory(path)
     return FileManager.default.fileExists(atPath: filepath)
 }

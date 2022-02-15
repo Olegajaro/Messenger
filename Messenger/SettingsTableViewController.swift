@@ -90,6 +90,11 @@ class SettingsTableViewController: UITableViewController {
             
             if user.avatarLink != "" {
                 // download and set avatar image
+                FileStorage.downloadImage(
+                    imageUrl: user.avatarLink
+                ) { [weak self] image in
+                    self?.avatarImageView.image = image
+                }
             }
         }
     }
