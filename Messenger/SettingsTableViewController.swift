@@ -93,7 +93,7 @@ class SettingsTableViewController: UITableViewController {
                 FileStorage.downloadImage(
                     imageUrl: user.avatarLink
                 ) { [weak self] image in
-                    self?.avatarImageView.image = image
+                    self?.avatarImageView.image = image?.circleMasked
                 }
             }
         }

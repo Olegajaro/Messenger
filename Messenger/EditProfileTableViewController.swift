@@ -71,7 +71,7 @@ class EditProfileTableViewController: UITableViewController {
                 FileStorage.downloadImage(
                     imageUrl: user.avatarLink
                 ) { [weak self] image in
-                    self?.avatarImageView.image = image
+                    self?.avatarImageView.image = image?.circleMasked
                 }
             }
         }
@@ -154,7 +154,7 @@ extension EditProfileTableViewController: GalleryControllerDelegate {
                 
                 if avatarImage != nil {
                     self.uploadAvatarImage(avatarImage!)
-                    self.avatarImageView.image = avatarImage
+                    self.avatarImageView.image = avatarImage?.circleMasked
                 } else {
                     ProgressHUD.showError("Couldn't select image!")
                 }

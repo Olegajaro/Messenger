@@ -10,6 +10,7 @@
 		1042B65427BBCFEE00D99213 /* EditProfileTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1042B65327BBCFEE00D99213 /* EditProfileTableViewController.swift */; };
 		1042B65627BBFEAA00D99213 /* FileStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1042B65527BBFEAA00D99213 /* FileStorage.swift */; };
 		1042B65927BC0EC300D99213 /* GlobalFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1042B65827BC0EC300D99213 /* GlobalFunctions.swift */; };
+		1042B65C27BC234E00D99213 /* UIImage+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1042B65B27BC234E00D99213 /* UIImage+Extensions.swift */; };
 		1058C92D27B563DF00A25995 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1058C92C27B563DF00A25995 /* AppDelegate.swift */; };
 		1058C92F27B563DF00A25995 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1058C92E27B563DF00A25995 /* SceneDelegate.swift */; };
 		1058C93127B563DF00A25995 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1058C93027B563DF00A25995 /* LoginViewController.swift */; };
@@ -31,6 +32,7 @@
 		1042B65327BBCFEE00D99213 /* EditProfileTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileTableViewController.swift; sourceTree = "<group>"; };
 		1042B65527BBFEAA00D99213 /* FileStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileStorage.swift; sourceTree = "<group>"; };
 		1042B65827BC0EC300D99213 /* GlobalFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalFunctions.swift; sourceTree = "<group>"; };
+		1042B65B27BC234E00D99213 /* UIImage+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extensions.swift"; sourceTree = "<group>"; };
 		1058C92927B563DF00A25995 /* Messenger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Messenger.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1058C92C27B563DF00A25995 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1058C92E27B563DF00A25995 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -67,10 +69,19 @@
 		1042B65727BC0EB200D99213 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				1042B65A27BC232900D99213 /* Extensions */,
 				10E6348927B8F4D700A3370A /* Constants.swift */,
 				1042B65827BC0EC300D99213 /* GlobalFunctions.swift */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		1042B65A27BC232900D99213 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				1042B65B27BC234E00D99213 /* UIImage+Extensions.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		1058C92027B563DF00A25995 = {
@@ -291,6 +302,7 @@
 				10E6348727B8F2B100A3370A /* User.swift in Sources */,
 				1058C92F27B563DF00A25995 /* SceneDelegate.swift in Sources */,
 				10E6348C27B8F82600A3370A /* FCollectionReference.swift in Sources */,
+				1042B65C27BC234E00D99213 /* UIImage+Extensions.swift in Sources */,
 				10E6348A27B8F4D700A3370A /* Constants.swift in Sources */,
 				109F1FD327BAADC4002723BF /* SettingsTableViewController.swift in Sources */,
 			);
