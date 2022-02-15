@@ -12,18 +12,14 @@ class StatusTableViewController: UITableViewController {
     // MARK: - Variables
     var allStatuses: [String] = []
     
+    // MARK: - View Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
 
         tableView.sectionHeaderTopPadding = 0
+        loadUserStatus()
     }
    
-    // MARK: - Loading status
-    private func loadUserStatus() {
-        allStatuses = userDefaults.object(forKey: KEY_STATUS) as! [String]
-        tableView.reloadData()
-    }
-
     // MARK: - Table view data source
     override func tableView(
         _ tableView: UITableView,
@@ -43,12 +39,48 @@ class StatusTableViewController: UITableViewController {
         
         let status = allStatuses[indexPath.row]
         let currentUserStatus = User.currentUser?.status
-
-        cell.accessoryType = currentUserStatus == status ? .checkmark : .none
+        
         content.text = status
 
+        cell.accessoryType = currentUserStatus == status ? .checkmark : .none
         cell.contentConfiguration = content
         return cell
     }
     
+    // MARK: - Table View Delegate
+    override func tableView(_ tableView: UITableView,
+                            didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        
+        updateCellCheck(indexPath)
+        tableView.reloadData()
+    }
+    
+    override func tableView(_ tableView: UITableView,
+                            viewForHeaderInSection section: Int) -> UIView? {
+        let headerView = UIView()
+        headerView.backgroundColor = UIColor(named: "TableViewBackgroundColor")
+        
+        return headerView
+    }
+    
+    override func tableView(_ tableView: UITableView,
+                            heightForHeaderInSection section: Int) -> CGFloat {
+        return 10.0
+    }
+    
+    // MARK: - Loading status
+    private func loadUserStatus() {
+        allStatuses = userDefaults.object(forKey: KEY_STATUS) as! [String]
+        tableView.reloadData()
+    }
+    
+    private func updateCellCheck(_ indexPath: IndexPath) {
+        
+        if var user = User.currentUser {
+            user.status = allStatuses[indexPath.row]
+            saveUserLocally(user)
+            FirebaseUserListener.shared.saveUserToFirestore(user)
+        }
+    }
 }

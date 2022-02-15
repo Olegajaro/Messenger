@@ -10,5 +10,6 @@ import Foundation
 let userDefaults = UserDefaults.standard
 let KEY_CURRENT_USER = "currentUser"
 let KEY_STATUS = "status"
+let KEY_FIRST_RUN = "firstRun"
 
 let KEY_FILE_REFERENCE = "gs://messenger-c871d.appspot.com"
