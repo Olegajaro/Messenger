@@ -7,6 +7,7 @@
 
 import Foundation
 import Firebase
+import UIKit
 
 class FirebaseUserListener {
     
@@ -83,6 +84,20 @@ class FirebaseUserListener {
         email: String, completion: @escaping CompletionTypeRegister
     ) {
         Auth.auth().sendPasswordReset(withEmail: email) { error in
+            completion(error)
+        }
+    }
+    
+    func logOutCurrentUser(completion: @escaping CompletionTypeRegister) {
+        
+        do {
+            try Auth.auth().signOut()
+            
+            userDefaults.removeObject(forKey: KEY_CURRENT_USER)
+            userDefaults.synchronize()
+            
+            completion(nil)
+        } catch let error {
             completion(error)
         }
     }
