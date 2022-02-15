@@ -19,6 +19,11 @@ class EditProfileTableViewController: UITableViewController {
         super.viewDidLoad()
         
         tableView.sectionHeaderTopPadding = 0
+        configureTextField()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
         
         showUserInfo()
     }
@@ -37,6 +42,13 @@ class EditProfileTableViewController: UITableViewController {
         return section == 0 ? 0.0 : 10.0
     }
     
+    override func tableView(_ tableView: UITableView,
+                            didSelectRowAt indexPath: IndexPath) {
+        
+        tableView.deselectRow(at: indexPath, animated: true)
+        //TODO: show status view
+    }
+    
     // MARK: - UpdateUI
     private func showUserInfo() {
         
@@ -48,5 +60,34 @@ class EditProfileTableViewController: UITableViewController {
                 // set avatar
             }
         }
+    }
+    
+    // MARK: - Configure
+    private func configureTextField() {
+        userNameTextField.delegate = self
+        userNameTextField.clearButtonMode = .whileEditing
+    }
+}
+
+extension EditProfileTableViewController: UITextFieldDelegate {
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        
+        if textField == userNameTextField {
+            
+            if textField.text != "" {
+                
+                if var user = User.currentUser {
+                    user.userName = textField.text ?? ""
+                    saveUserLocally(user)
+                    FirebaseUserListener.shared.saveUserToFirestore(user)
+                }
+            }
+            
+            textField.resignFirstResponder()
+            return false
+        }
+        
+        return true
     }
 }

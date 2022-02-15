@@ -103,7 +103,7 @@ class FirebaseUserListener {
     }
     
     // MARK: - Save users
-    private func saveUserToFirestore(_ user: User) {
+    func saveUserToFirestore(_ user: User) {
         do {
             try firebaseReference(.user).document(user.id).setData(from: user)
         } catch {
