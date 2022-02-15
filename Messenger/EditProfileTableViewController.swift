@@ -102,8 +102,12 @@ class EditProfileTableViewController: UITableViewController {
                 saveUserLocally(user)
                 FirebaseUserListener.shared.saveUserToFirestore(user)
             }
-            
-            // TODO: save image locally
+            if let imageData = image.jpegData(compressionQuality: 1.0) {
+                FileStorage.saveFileLocally(
+                    fileData: imageData as NSData,
+                    fileName: User.currentId
+                )
+            }
         }
     }
 }
@@ -132,6 +136,7 @@ extension EditProfileTableViewController: UITextFieldDelegate {
     }
 }
 
+// MARK: - GalleryControllerDelegate
 extension EditProfileTableViewController: GalleryControllerDelegate {
     
     func galleryController(_ controller: GalleryController,
