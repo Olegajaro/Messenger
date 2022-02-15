@@ -9,3 +9,5 @@ import Foundation
 
 let userDefaults = UserDefaults.standard
 let KEY_CURRENT_USER = "currentUser"
+
+let KEY_FILE_REFERENCE = "gs://messenger-c871d.appspot.com"
