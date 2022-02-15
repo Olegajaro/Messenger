@@ -27,8 +27,8 @@ class EditProfileTableViewController: UITableViewController {
         configureTextField()
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         
         showUserInfo()
     }
@@ -56,7 +56,11 @@ class EditProfileTableViewController: UITableViewController {
                             didSelectRowAt indexPath: IndexPath) {
         
         tableView.deselectRow(at: indexPath, animated: true)
-        //TODO: show status view
+        
+        // show status table view
+        if indexPath.section == 1 && indexPath.row == 0 {
+            performSegue(withIdentifier: "editProfileToStatus", sender: self)
+        }
     }
     
     // MARK: - UpdateUI
