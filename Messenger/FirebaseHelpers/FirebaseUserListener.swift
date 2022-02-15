@@ -88,6 +88,7 @@ class FirebaseUserListener {
         }
     }
     
+    // MARK: - Log Out
     func logOutCurrentUser(completion: @escaping CompletionTypeRegister) {
         
         do {

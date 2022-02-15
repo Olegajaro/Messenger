@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Gallery
 
 class EditProfileTableViewController: UITableViewController {
 
@@ -13,6 +14,10 @@ class EditProfileTableViewController: UITableViewController {
     @IBOutlet weak var avatarImageView: UIImageView!
     @IBOutlet weak var statusLabel: UILabel!
     @IBOutlet weak var userNameTextField: UITextField!
+    
+    // MARK: - Variables
+    var gallery: GalleryController!
+    
     
     // MARK: - View Lifecycle
     override func viewDidLoad() {
@@ -26,6 +31,11 @@ class EditProfileTableViewController: UITableViewController {
         super.viewDidAppear(animated)
         
         showUserInfo()
+    }
+    
+    // MARK: - IBActions
+    @IBAction func editButtonPressed(_ sender: Any) {
+        showImageGallery()
     }
     
     // MARK: - UITableViewDelegate
@@ -67,8 +77,22 @@ class EditProfileTableViewController: UITableViewController {
         userNameTextField.delegate = self
         userNameTextField.clearButtonMode = .whileEditing
     }
+    
+    // MARK: - Gallery
+    private func showImageGallery() {
+        
+        self.gallery = GalleryController()
+        self.gallery.delegate = self
+        
+        Config.tabsToShow = [.imageTab, .cameraTab]
+        Config.Camera.imageLimit = 1
+        Config.initialTab = .imageTab
+        
+        present(gallery, animated: true, completion: nil)
+    }
 }
 
+// MARK: - UITextFieldDelegate
 extension EditProfileTableViewController: UITextFieldDelegate {
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
@@ -89,5 +113,42 @@ extension EditProfileTableViewController: UITextFieldDelegate {
         }
         
         return true
+    }
+}
+
+extension EditProfileTableViewController: GalleryControllerDelegate {
+    
+    func galleryController(_ controller: GalleryController,
+                           didSelectImages images: [Image]) {
+        
+        if images.count > 0 {
+            
+            images.first!.resolve { avatarImage in
+                
+                if avatarImage != nil {
+                    // TODO: upload image
+                    self.avatarImageView.image = avatarImage
+                    
+                } else {
+                    ProgressHUD.showError("Couldn't select image!")
+                }
+            }
+        }
+        
+        controller.dismiss(animated: true, completion: nil)
+    }
+    
+    func galleryController(_ controller: GalleryController,
+                           didSelectVideo video: Video) {
+        controller.dismiss(animated: true, completion: nil)
+    }
+    
+    func galleryController(_ controller: GalleryController,
+                           requestLightbox images: [Image]) {
+        controller.dismiss(animated: true, completion: nil)
+    }
+    
+    func galleryControllerDidCancel(_ controller: GalleryController) {
+        controller.dismiss(animated: true, completion: nil)
     }
 }
