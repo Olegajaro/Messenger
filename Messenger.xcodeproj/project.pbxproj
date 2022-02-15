@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1042B65427BBCFEE00D99213 /* EditProfileTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1042B65327BBCFEE00D99213 /* EditProfileTableViewController.swift */; };
 		1058C92D27B563DF00A25995 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1058C92C27B563DF00A25995 /* AppDelegate.swift */; };
 		1058C92F27B563DF00A25995 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1058C92E27B563DF00A25995 /* SceneDelegate.swift */; };
 		1058C93127B563DF00A25995 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1058C93027B563DF00A25995 /* LoginViewController.swift */; };
@@ -25,6 +26,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1042B65327BBCFEE00D99213 /* EditProfileTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileTableViewController.swift; sourceTree = "<group>"; };
 		1058C92927B563DF00A25995 /* Messenger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Messenger.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1058C92C27B563DF00A25995 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1058C92E27B563DF00A25995 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -84,6 +86,7 @@
 				1058C92E27B563DF00A25995 /* SceneDelegate.swift */,
 				1058C93027B563DF00A25995 /* LoginViewController.swift */,
 				109F1FD227BAADC4002723BF /* SettingsTableViewController.swift */,
+				1042B65327BBCFEE00D99213 /* EditProfileTableViewController.swift */,
 				10E6348927B8F4D700A3370A /* Constants.swift */,
 				10E6348827B8F2BB00A3370A /* Models */,
 				10E6348D27B8F90B00A3370A /* FirebaseHelpers */,
@@ -267,6 +270,7 @@
 				1058C93127B563DF00A25995 /* LoginViewController.swift in Sources */,
 				1058C92D27B563DF00A25995 /* AppDelegate.swift in Sources */,
 				1058C94127B5677D00A25995 /* ProgressHUD.swift in Sources */,
+				1042B65427BBCFEE00D99213 /* EditProfileTableViewController.swift in Sources */,
 				10E6348F27B8F96100A3370A /* FirebaseUserListener.swift in Sources */,
 				10E6348727B8F2B100A3370A /* User.swift in Sources */,
 				1058C92F27B563DF00A25995 /* SceneDelegate.swift in Sources */,
