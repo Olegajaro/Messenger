@@ -20,10 +20,20 @@ class UsersTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        refreshControl = UIRefreshControl()
+        tableView.refreshControl = refreshControl
 //        createDummyUsers()
         setupSearchController()
         downloadUsers()
         tableView.rowHeight = 80
+        tableView.sectionHeaderTopPadding = 0
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        navigationItem.largeTitleDisplayMode = .always
+        navigationController?.navigationBar.prefersLargeTitles = true
     }
     
     // MARK: - Download Users
@@ -56,6 +66,15 @@ class UsersTableViewController: UITableViewController {
         
         tableView.reloadData()
     }
+    
+    // MARK: - UIScrollViewDelegate
+    override func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        
+        if refreshControl!.isRefreshing {
+            downloadUsers()
+            refreshControl!.endRefreshing()
+        }
+    }
 
     // MARK: - Table view data source
 
@@ -81,6 +100,25 @@ class UsersTableViewController: UITableViewController {
         cell.configureCell(withUser: user)
 
         return cell
+    }
+    
+    // MARK: - UITableViewDelegate
+    override func tableView(_ tableView: UITableView,
+                            viewForHeaderInSection section: Int) -> UIView? {
+        let headerView = UIView()
+        headerView.backgroundColor = UIColor(named: "TableViewBackgroundColor")
+        
+        return headerView
+    }
+    
+    override func tableView(_ tableView: UITableView,
+                            heightForHeaderInSection section: Int) -> CGFloat {
+        5
+    }
+    
+    override func tableView(_ tableView: UITableView,
+                            didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
     }
 }
 
