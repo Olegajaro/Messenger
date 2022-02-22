@@ -13,6 +13,7 @@ class UsersTableViewController: UITableViewController {
     var allUsers: [User] = []
     var filteredUsers: [User] = []
     
+    let firebaseUserListener = FirebaseUserListener.shared
     let searchController = UISearchController(searchResultsController: nil)
     
     // MARK: - View Lifecycle
@@ -20,6 +21,40 @@ class UsersTableViewController: UITableViewController {
         super.viewDidLoad()
         
 //        createDummyUsers()
+        setupSearchController()
+        downloadUsers()
+        tableView.rowHeight = 80
+    }
+    
+    // MARK: - Download Users
+    private func downloadUsers() {
+        firebaseUserListener.downloadAllUsersFromFirebase { [weak self] allUsers in
+            self?.allUsers = allUsers
+            
+            DispatchQueue.main.async {
+                self?.tableView.reloadData()
+            }
+        }
+    }
+    
+    // MARK: - Setup search controller
+    private func setupSearchController() {
+        navigationItem.searchController = searchController
+        navigationItem.hidesSearchBarWhenScrolling = true
+        
+        searchController.obscuresBackgroundDuringPresentation = false
+        searchController.searchBar.placeholder = "Search user"
+        searchController.searchResultsUpdater = self
+        definesPresentationContext = true
+    }
+    
+    private func filteredContentForSearchText(searchText: String) {
+        
+        filteredUsers = allUsers.filter { user -> Bool in
+            return user.userName.lowercased().contains(searchText.lowercased())
+        }
+        
+        tableView.reloadData()
     }
 
     // MARK: - Table view data source
@@ -46,5 +81,14 @@ class UsersTableViewController: UITableViewController {
         cell.configureCell(withUser: user)
 
         return cell
+    }
+}
+
+// MARK: - UISearchResultsUpdating
+extension UsersTableViewController: UISearchResultsUpdating {
+    
+    func updateSearchResults(for searchController: UISearchController) {
+        
+        filteredContentForSearchText(searchText: searchController.searchBar.text!)
     }
 }

@@ -35,7 +35,7 @@ class UsersTableViewCell: UITableViewCell {
         
         if avatarLink != "" {
             FileStorage.downloadImage(imageUrl: avatarLink) { [weak self] avatarImage in
-                self?.avatarImageView.image = avatarImage
+                self?.avatarImageView.image = avatarImage?.circleMasked
             }
         } else {
             avatarImageView.image = UIImage(named: "avatar")?.circleMasked
