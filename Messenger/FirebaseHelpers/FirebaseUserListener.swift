@@ -13,6 +13,7 @@ class FirebaseUserListener {
     
     typealias CompletionTypeLogin = (_ error: Error?, _ isEmailVerified: Bool) -> Void
     typealias CompletionTypeRegister = (_ error: Error?) -> Void
+    typealias CompletionTypeUsers = (_ allUsers: [User]) -> Void
     
     static let shared = FirebaseUserListener()
     
@@ -109,6 +110,62 @@ class FirebaseUserListener {
             try firebaseReference(.user).document(user.id).setData(from: user)
         } catch {
             print(error.localizedDescription, "adding user")
+        }
+    }
+    
+    // MARK: - Download all users
+    func downloadAllUsersFromFirebase(completion: @escaping CompletionTypeUsers) {
+        
+        var users: [User] = []
+        
+        firebaseReference(.user).limit(to: 500).getDocuments { snapshot, error in
+            
+            guard let document = snapshot?.documents else {
+                print("no documents in all users")
+                return
+            }
+            
+            let allUsers = document.compactMap { queryDocumentSnapshot -> User? in
+                
+                return try? queryDocumentSnapshot.data(as: User.self)
+            }
+            
+            for user in allUsers {
+                if User.currentId != user.id {
+                    users.append(user)
+                }
+            }
+            
+            completion(users)
+        }
+    }
+    
+    func downloadUserFromFirebase(
+        withIds: [String],
+        completion: @escaping CompletionTypeUsers
+    ) {
+        var count = 0
+        var usersArray: [User] = []
+        
+        for userId in withIds {
+            
+            firebaseReference(.user).document(userId).getDocument { snapshot, error in
+                
+                guard
+                    let document = snapshot,
+                    let user = try? document.data(as: User.self)
+                else {
+                    print("no documents in all users")
+                    return
+                }
+                
+                usersArray.append(user)
+                count += 1
+                
+                if count == withIds.count {
+                    completion(usersArray)
+                }
+            }
         }
     }
     
