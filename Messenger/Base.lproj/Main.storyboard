@@ -657,15 +657,15 @@
         <!--Profile Table View Controller-->
         <scene sceneID="zN9-LM-siN">
             <objects>
-                <tableViewController id="AED-S6-XVP" customClass="ProfileTableViewController" customModule="Messenger" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="ProfileView" id="AED-S6-XVP" customClass="ProfileTableViewController" customModule="Messenger" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="tsK-Lz-Xz2">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" name="TableViewBackgroundColor"/>
                         <sections>
                             <tableViewSection headerTitle="Section-1" id="NTR-3n-3QM">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="200" id="Qgf-bn-VRO">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="200" id="Qgf-bn-VRO">
                                         <rect key="frame" x="0.0" y="44.5" width="414" height="200"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Qgf-bn-VRO" id="LgT-2U-wrc">
@@ -709,6 +709,7 @@
                                                 <constraint firstAttribute="trailing" secondItem="DNN-ul-jp7" secondAttribute="trailing" constant="16" id="umf-1z-toj"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" name="CellColor"/>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
@@ -734,6 +735,7 @@
                                                 <constraint firstItem="HdP-WU-Ti1" firstAttribute="leading" secondItem="iDA-CV-Sq2" secondAttribute="leading" constant="20" id="EG3-3I-vke"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" name="CellColor"/>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
