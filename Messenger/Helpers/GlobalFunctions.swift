@@ -15,3 +15,8 @@ func fileNameFrom(fileUrl: String) -> String {
     
     return nameThirdChop ?? ""
 }
+
+func timeElapsed(_ date: Date) -> String {
+    
+    return ""
+}

@@ -27,6 +27,8 @@
 		10ADDE6427B5732600E20021 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 10ADDE6327B5732600E20021 /* GoogleService-Info.plist */; };
 		10D5FCE727CA9A8200C906EF /* ProfileTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D5FCE627CA9A8200C906EF /* ProfileTableViewController.swift */; };
 		10D5FCE927CAA2A400C906EF /* RecentChat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D5FCE827CAA2A400C906EF /* RecentChat.swift */; };
+		10D5FCEC27CAAA5400C906EF /* RecentTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D5FCEB27CAAA5400C906EF /* RecentTableViewController.swift */; };
+		10D5FCEE27CAAA6A00C906EF /* RecentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D5FCED27CAAA6A00C906EF /* RecentTableViewCell.swift */; };
 		10E6348727B8F2B100A3370A /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10E6348627B8F2B100A3370A /* User.swift */; };
 		10E6348A27B8F4D700A3370A /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10E6348927B8F4D700A3370A /* Constants.swift */; };
 		10E6348C27B8F82600A3370A /* FCollectionReference.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10E6348B27B8F82600A3370A /* FCollectionReference.swift */; };
@@ -57,6 +59,8 @@
 		10ADDE6327B5732600E20021 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		10D5FCE627CA9A8200C906EF /* ProfileTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableViewController.swift; sourceTree = "<group>"; };
 		10D5FCE827CAA2A400C906EF /* RecentChat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentChat.swift; sourceTree = "<group>"; };
+		10D5FCEB27CAAA5400C906EF /* RecentTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentTableViewController.swift; sourceTree = "<group>"; };
+		10D5FCED27CAAA6A00C906EF /* RecentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentTableViewCell.swift; sourceTree = "<group>"; };
 		10E6348627B8F2B100A3370A /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		10E6348927B8F4D700A3370A /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		10E6348B27B8F82600A3370A /* FCollectionReference.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FCollectionReference.swift; sourceTree = "<group>"; };
@@ -122,6 +126,7 @@
 				1058C92E27B563DF00A25995 /* SceneDelegate.swift */,
 				1058C93227B563DF00A25995 /* Main.storyboard */,
 				10D5FCE527CA9A0900C906EF /* LoginView */,
+				10D5FCEA27CAAA3500C906EF /* RecentChat */,
 				1061B4BF27C40FAD00DC9009 /* Users */,
 				1061B4BA27C40CBB00DC9009 /* Settings */,
 				1042B65727BC0EB200D99213 /* Helpers */,
@@ -178,6 +183,15 @@
 				1058C93027B563DF00A25995 /* LoginViewController.swift */,
 			);
 			path = LoginView;
+			sourceTree = "<group>";
+		};
+		10D5FCEA27CAAA3500C906EF /* RecentChat */ = {
+			isa = PBXGroup;
+			children = (
+				10D5FCEB27CAAA5400C906EF /* RecentTableViewController.swift */,
+				10D5FCED27CAAA6A00C906EF /* RecentTableViewCell.swift */,
+			);
+			path = RecentChat;
 			sourceTree = "<group>";
 		};
 		10E6348827B8F2BB00A3370A /* Models */ = {
@@ -336,7 +350,9 @@
 			files = (
 				10D5FCE727CA9A8200C906EF /* ProfileTableViewController.swift in Sources */,
 				1058C93127B563DF00A25995 /* LoginViewController.swift in Sources */,
+				10D5FCEC27CAAA5400C906EF /* RecentTableViewController.swift in Sources */,
 				1042B65627BBFEAA00D99213 /* FileStorage.swift in Sources */,
+				10D5FCEE27CAAA6A00C906EF /* RecentTableViewCell.swift in Sources */,
 				1061B4BC27C40F9000DC9009 /* UsersTableViewController.swift in Sources */,
 				1042B65927BC0EC300D99213 /* GlobalFunctions.swift in Sources */,
 				1058C92D27B563DF00A25995 /* AppDelegate.swift in Sources */,
