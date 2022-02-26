@@ -77,7 +77,6 @@ class UsersTableViewController: UITableViewController {
     }
 
     // MARK: - Table view data source
-
     override func tableView(_ tableView: UITableView,
                             numberOfRowsInSection section: Int) -> Int {
         return searchController.isActive ? filteredUsers.count : allUsers.count
