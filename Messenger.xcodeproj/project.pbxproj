@@ -22,6 +22,7 @@
 		1058C94127B5677D00A25995 /* ProgressHUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1058C94027B5677D00A25995 /* ProgressHUD.swift */; };
 		1061B4BC27C40F9000DC9009 /* UsersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1061B4BB27C40F9000DC9009 /* UsersTableViewController.swift */; };
 		1061B4BE27C40FA500DC9009 /* UsersTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1061B4BD27C40FA500DC9009 /* UsersTableViewCell.swift */; };
+		106C542E27CD23A2009DE557 /* Date+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 106C542D27CD23A2009DE557 /* Date+Extensions.swift */; };
 		109F1FD327BAADC4002723BF /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 109F1FD227BAADC4002723BF /* SettingsTableViewController.swift */; };
 		10ADDE6227B56FD500E20021 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 10ADDE6127B56FD500E20021 /* .gitignore */; };
 		10ADDE6427B5732600E20021 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 10ADDE6327B5732600E20021 /* GoogleService-Info.plist */; };
@@ -54,6 +55,7 @@
 		1058C94027B5677D00A25995 /* ProgressHUD.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressHUD.swift; sourceTree = "<group>"; };
 		1061B4BB27C40F9000DC9009 /* UsersTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersTableViewController.swift; sourceTree = "<group>"; };
 		1061B4BD27C40FA500DC9009 /* UsersTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersTableViewCell.swift; sourceTree = "<group>"; };
+		106C542D27CD23A2009DE557 /* Date+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extensions.swift"; sourceTree = "<group>"; };
 		109F1FD227BAADC4002723BF /* SettingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
 		10ADDE6127B56FD500E20021 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		10ADDE6327B5732600E20021 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -96,6 +98,7 @@
 			isa = PBXGroup;
 			children = (
 				1042B65B27BC234E00D99213 /* UIImage+Extensions.swift */,
+				106C542D27CD23A2009DE557 /* Date+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -349,6 +352,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				10D5FCE727CA9A8200C906EF /* ProfileTableViewController.swift in Sources */,
+				106C542E27CD23A2009DE557 /* Date+Extensions.swift in Sources */,
 				1058C93127B563DF00A25995 /* LoginViewController.swift in Sources */,
 				10D5FCEC27CAAA5400C906EF /* RecentTableViewController.swift in Sources */,
 				1042B65627BBFEAA00D99213 /* FileStorage.swift in Sources */,
