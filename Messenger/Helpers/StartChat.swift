@@ -65,6 +65,8 @@ func createRecentItems(chatRoomId: String, users: [User]) {
                 unreadCounter: 0,
                 avatarLink: receiverUser.avatarLink
             )
+            
+            FirebaseRecentChatListener.shared.addRecent(recentObject)
         }
     }
 }
