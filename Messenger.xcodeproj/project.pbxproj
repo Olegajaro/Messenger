@@ -23,6 +23,8 @@
 		1061B4BC27C40F9000DC9009 /* UsersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1061B4BB27C40F9000DC9009 /* UsersTableViewController.swift */; };
 		1061B4BE27C40FA500DC9009 /* UsersTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1061B4BD27C40FA500DC9009 /* UsersTableViewCell.swift */; };
 		106C542E27CD23A2009DE557 /* Date+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 106C542D27CD23A2009DE557 /* Date+Extensions.swift */; };
+		106C543027CD2596009DE557 /* StartChat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 106C542F27CD2596009DE557 /* StartChat.swift */; };
+		106C543227CD29E4009DE557 /* FirebaseRecentChatListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = 106C543127CD29E4009DE557 /* FirebaseRecentChatListener.swift */; };
 		109F1FD327BAADC4002723BF /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 109F1FD227BAADC4002723BF /* SettingsTableViewController.swift */; };
 		10ADDE6227B56FD500E20021 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 10ADDE6127B56FD500E20021 /* .gitignore */; };
 		10ADDE6427B5732600E20021 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 10ADDE6327B5732600E20021 /* GoogleService-Info.plist */; };
@@ -56,6 +58,8 @@
 		1061B4BB27C40F9000DC9009 /* UsersTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersTableViewController.swift; sourceTree = "<group>"; };
 		1061B4BD27C40FA500DC9009 /* UsersTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersTableViewCell.swift; sourceTree = "<group>"; };
 		106C542D27CD23A2009DE557 /* Date+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extensions.swift"; sourceTree = "<group>"; };
+		106C542F27CD2596009DE557 /* StartChat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartChat.swift; sourceTree = "<group>"; };
+		106C543127CD29E4009DE557 /* FirebaseRecentChatListener.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseRecentChatListener.swift; sourceTree = "<group>"; };
 		109F1FD227BAADC4002723BF /* SettingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
 		10ADDE6127B56FD500E20021 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		10ADDE6327B5732600E20021 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -90,6 +94,7 @@
 				1042B65A27BC232900D99213 /* Extensions */,
 				10E6348927B8F4D700A3370A /* Constants.swift */,
 				1042B65827BC0EC300D99213 /* GlobalFunctions.swift */,
+				106C542F27CD2596009DE557 /* StartChat.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -212,6 +217,7 @@
 			children = (
 				10E6348B27B8F82600A3370A /* FCollectionReference.swift */,
 				10E6348E27B8F96100A3370A /* FirebaseUserListener.swift */,
+				106C543127CD29E4009DE557 /* FirebaseRecentChatListener.swift */,
 				1042B65527BBFEAA00D99213 /* FileStorage.swift */,
 			);
 			path = FirebaseHelpers;
@@ -357,6 +363,7 @@
 				10D5FCEC27CAAA5400C906EF /* RecentTableViewController.swift in Sources */,
 				1042B65627BBFEAA00D99213 /* FileStorage.swift in Sources */,
 				10D5FCEE27CAAA6A00C906EF /* RecentTableViewCell.swift in Sources */,
+				106C543227CD29E4009DE557 /* FirebaseRecentChatListener.swift in Sources */,
 				1061B4BC27C40F9000DC9009 /* UsersTableViewController.swift in Sources */,
 				1042B65927BC0EC300D99213 /* GlobalFunctions.swift in Sources */,
 				1058C92D27B563DF00A25995 /* AppDelegate.swift in Sources */,
@@ -371,6 +378,7 @@
 				1061B4BE27C40FA500DC9009 /* UsersTableViewCell.swift in Sources */,
 				10E6348C27B8F82600A3370A /* FCollectionReference.swift in Sources */,
 				1042B65C27BC234E00D99213 /* UIImage+Extensions.swift in Sources */,
+				106C543027CD2596009DE557 /* StartChat.swift in Sources */,
 				10E6348A27B8F4D700A3370A /* Constants.swift in Sources */,
 				109F1FD327BAADC4002723BF /* SettingsTableViewController.swift in Sources */,
 			);
