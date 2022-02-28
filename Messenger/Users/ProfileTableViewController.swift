@@ -36,7 +36,9 @@ class ProfileTableViewController: UITableViewController {
             statusLabel.text = user!.status
             
             if user!.avatarLink != "" {
-                FileStorage.downloadImage(imageUrl: user!.avatarLink) { [weak self] image in
+                FileStorage.downloadImage(
+                    imageUrl: user!.avatarLink
+                ) { [weak self] image in
                     self?.avatarImageView.image = image?.circleMasked
                 }
             }
@@ -44,12 +46,13 @@ class ProfileTableViewController: UITableViewController {
     }
     
     // MARK: - UITableViewDelegate
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    override func tableView(_ tableView: UITableView,
+                            didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         
         if indexPath.section == 1 {
             print("DEBUG: start chat")
-            // todo go to chat room
+            // TODO: go to chat room
         }
     }
     
