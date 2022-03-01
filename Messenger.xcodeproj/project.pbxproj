@@ -30,7 +30,7 @@
 		10ADDE6427B5732600E20021 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 10ADDE6327B5732600E20021 /* GoogleService-Info.plist */; };
 		10D5FCE727CA9A8200C906EF /* ProfileTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D5FCE627CA9A8200C906EF /* ProfileTableViewController.swift */; };
 		10D5FCE927CAA2A400C906EF /* RecentChat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D5FCE827CAA2A400C906EF /* RecentChat.swift */; };
-		10D5FCEC27CAAA5400C906EF /* RecentTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D5FCEB27CAAA5400C906EF /* RecentTableViewController.swift */; };
+		10D5FCEC27CAAA5400C906EF /* ChatsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D5FCEB27CAAA5400C906EF /* ChatsTableViewController.swift */; };
 		10D5FCEE27CAAA6A00C906EF /* RecentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D5FCED27CAAA6A00C906EF /* RecentTableViewCell.swift */; };
 		10E6348727B8F2B100A3370A /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10E6348627B8F2B100A3370A /* User.swift */; };
 		10E6348A27B8F4D700A3370A /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10E6348927B8F4D700A3370A /* Constants.swift */; };
@@ -65,7 +65,7 @@
 		10ADDE6327B5732600E20021 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		10D5FCE627CA9A8200C906EF /* ProfileTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableViewController.swift; sourceTree = "<group>"; };
 		10D5FCE827CAA2A400C906EF /* RecentChat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentChat.swift; sourceTree = "<group>"; };
-		10D5FCEB27CAAA5400C906EF /* RecentTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentTableViewController.swift; sourceTree = "<group>"; };
+		10D5FCEB27CAAA5400C906EF /* ChatsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatsTableViewController.swift; sourceTree = "<group>"; };
 		10D5FCED27CAAA6A00C906EF /* RecentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentTableViewCell.swift; sourceTree = "<group>"; };
 		10E6348627B8F2B100A3370A /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		10E6348927B8F4D700A3370A /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -196,7 +196,7 @@
 		10D5FCEA27CAAA3500C906EF /* RecentChat */ = {
 			isa = PBXGroup;
 			children = (
-				10D5FCEB27CAAA5400C906EF /* RecentTableViewController.swift */,
+				10D5FCEB27CAAA5400C906EF /* ChatsTableViewController.swift */,
 				10D5FCED27CAAA6A00C906EF /* RecentTableViewCell.swift */,
 			);
 			path = RecentChat;
@@ -360,7 +360,7 @@
 				10D5FCE727CA9A8200C906EF /* ProfileTableViewController.swift in Sources */,
 				106C542E27CD23A2009DE557 /* Date+Extensions.swift in Sources */,
 				1058C93127B563DF00A25995 /* LoginViewController.swift in Sources */,
-				10D5FCEC27CAAA5400C906EF /* RecentTableViewController.swift in Sources */,
+				10D5FCEC27CAAA5400C906EF /* ChatsTableViewController.swift in Sources */,
 				1042B65627BBFEAA00D99213 /* FileStorage.swift in Sources */,
 				10D5FCEE27CAAA6A00C906EF /* RecentTableViewCell.swift in Sources */,
 				106C543227CD29E4009DE557 /* FirebaseRecentChatListener.swift in Sources */,
