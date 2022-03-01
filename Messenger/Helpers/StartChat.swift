@@ -27,7 +27,6 @@ func createRecentItems(chatRoomId: String, users: [User]) {
     
     var memberIdsToCreateRecent = [firstUserId, lastUserid]
     
-    print("DEBUG: members to create recent is ", memberIdsToCreateRecent)
     // does user have recent?
     firebaseReference(.recent).whereField(
         KEY_CHATROOM_ID, isEqualTo: chatRoomId
@@ -41,12 +40,10 @@ func createRecentItems(chatRoomId: String, users: [User]) {
                 snapshot: snapshot,
                 memberIds: memberIdsToCreateRecent
             )
-            print("DEBUG: updated members to create recent is ", memberIdsToCreateRecent)
         }
         
         for userId in memberIdsToCreateRecent {
             
-            print("DEBUG: creating recent for user with id", userId) 
             let senderUser = userId == User.currentId
             ? User.currentUser!
             : getReceiverFrom(users: users)

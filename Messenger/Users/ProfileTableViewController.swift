@@ -52,7 +52,6 @@ class ProfileTableViewController: UITableViewController {
         
         if indexPath.section == 1 {
             let chatId = startChat(user1: User.currentUser!, user2: user!)
-            print("DEBUG: start chatting chatroom id is ", chatId)
         }
     }
     
