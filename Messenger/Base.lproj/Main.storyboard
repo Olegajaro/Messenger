@@ -794,7 +794,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="16n-0R-7hz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1685.5072463768117" y="-911.38392857142856"/>
+            <point key="canvasLocation" x="1668" y="-911"/>
         </scene>
         <!--Chats-->
         <scene sceneID="9FE-i4-MJL">
